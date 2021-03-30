@@ -1,6 +1,9 @@
 import {FlatList, StyleSheet, View, Text, SafeAreaView} from "react-native";
 import React from 'react'
 import MovieCard, {Movie} from "./components/MovieCard";
+import {StackNavigationProp} from "@react-navigation/stack/lib/typescript/src/types";
+import {RootStackParamList} from "../App";
+import { RouteProp } from '@react-navigation/native';
 
 const movies: Movie[] = [
     {
@@ -144,7 +147,19 @@ const movies: Movie[] = [
         "download": "1"
     }]
 
-const MoviesListScreen:  React.FC = () => {
+type MoviesListScreenNavigationProp = StackNavigationProp<
+    RootStackParamList,
+    'MoviesList'
+    >;
+
+type MoviesListScreenRouteProp = RouteProp<RootStackParamList, 'MoviesList'>
+
+type Props = {
+    route: MoviesListScreenRouteProp;
+    navigation: MoviesListScreenNavigationProp;
+};
+
+const MoviesListScreen = ({ navigation }: Props) => {
     return (
         <SafeAreaView style={styles.container}>
             <FlatList style={styles.moviesList} data={movies} renderItem={(item) => {
@@ -160,10 +175,12 @@ const MoviesListScreen:  React.FC = () => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        backgroundColor: '#fff'
     },
     moviesList: {
-        flex: 1
+        flex: 1,
+        paddingTop: 10
     },
     itemContainer: {
         flex: 1,
