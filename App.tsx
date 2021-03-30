@@ -1,8 +1,8 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import {configureStore, createSlice} from "@reduxjs/toolkit";
+import { StyleSheet, View } from 'react-native';
+import {configureStore} from "@reduxjs/toolkit";
 import {Provider} from "react-redux";
+import MoviesList from "./src/MoviesListScreen"
 
 const store = configureStore({
   reducer: {},
@@ -12,8 +12,7 @@ export default function App(): React.ReactElement {
   return (
       <Provider store={store}>
         <View style={styles.container}>
-          <Text>Open up App.tsx to start working on your app!</Text>
-          <StatusBar style="auto" />
+          <MoviesList />
         </View>
       </Provider>
   );
