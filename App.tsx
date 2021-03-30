@@ -6,9 +6,12 @@ import {Provider} from "react-redux";
 import { NavigationContainer } from '@react-navigation/native';
 import {createStackNavigator} from "@react-navigation/stack";
 import MoviesListScreen from "./src/MoviesListScreen";
+import moviesReducer from "./src/redux/MoviesReducer"
 
 const store = configureStore({
-  reducer: {},
+  reducer: {
+      movies: moviesReducer
+  },
 });
 
 export type RootStackParamList = {
@@ -22,7 +25,11 @@ export default function App(): React.ReactElement {
       <Provider store={store}>
           <NavigationContainer>
               <Stack.Navigator>
-                  <Stack.Screen name="MoviesList" component={MoviesListScreen} options={{title: "Our Movies"}} />
+                  <Stack.Screen name="MoviesList" component={MoviesListScreen} options={{
+                      title: "Our Movies",
+                      headerStyle: {
+                          backgroundColor: '#fff',
+                      }}} />
               </Stack.Navigator>
           </NavigationContainer>
       </Provider>
