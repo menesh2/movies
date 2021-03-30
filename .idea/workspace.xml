@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7975082-59ff-4a2d-9728-1ec9b700b7cd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/MoviesListScreen.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/MovieCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MoviesListScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/MoviesListScreen.tsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,8 +22,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+            <state relative-caret-position="210">
+              <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -30,14 +31,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MoviesListScreen.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="162" column="21" selection-start-line="162" selection-start-column="21" selection-end-line="162" selection-end-column="21" />
+            <state relative-caret-position="210">
+              <caret line="156" selection-start-line="156" selection-end-line="163" selection-end-column="3" />
               <folding>
-                <element signature="e#0#50#0" expanded="true" />
-                <element signature="e#15#8754#0" />
+                <element signature="e#128#8867#0" />
                 <element signature="e#116#121#0" expanded="true" />
                 <element signature="e#67#72#0" expanded="true" />
                 <element signature="e#107#114#0" expanded="true" />
@@ -45,6 +45,18 @@
                 <element signature="e#2#7#0" expanded="true" />
                 <element signature="e#110#115#0" expanded="true" />
                 <element signature="e#120#125#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/MovieCard.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="495">
+              <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -65,6 +77,7 @@
       <list>
         <option value="$PROJECT_DIR$/App.tsx" />
         <option value="$PROJECT_DIR$/src/MoviesListScreen.tsx" />
+        <option value="$PROJECT_DIR$/src/components/MovieCard.tsx" />
       </list>
     </option>
   </component>
@@ -79,14 +92,23 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="movies" type="b2602c69:ProjectViewProjectNode" />
               <item name="movies" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="movies" type="b2602c69:ProjectViewProjectNode" />
+              <item name="movies" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="movies" type="b2602c69:ProjectViewProjectNode" />
+              <item name="movies" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="movies" type="b2602c69:ProjectViewProjectNode" />
@@ -101,6 +123,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -140,18 +164,19 @@
       <workItem from="1617055890465" duration="1167000" />
       <workItem from="1617057699528" duration="1025000" />
       <workItem from="1617085315149" duration="139000" />
-      <workItem from="1617098581127" duration="1007000" />
+      <workItem from="1617098581127" duration="1806000" />
+      <workItem from="1617100419014" duration="702000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3986000" />
+    <option name="totallyTimeSpent" value="5487000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="58" y="23" width="1920" height="979" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2603834" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2630458" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -257,8 +282,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/App.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+        <state relative-caret-position="210">
+          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -267,11 +292,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MoviesListScreen.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="162" column="21" selection-start-line="162" selection-start-column="21" selection-end-line="162" selection-end-column="21" />
+        <state relative-caret-position="210">
+          <caret line="156" selection-start-line="156" selection-end-line="163" selection-end-column="3" />
           <folding>
-            <element signature="e#0#50#0" expanded="true" />
-            <element signature="e#15#8754#0" />
+            <element signature="e#128#8867#0" />
             <element signature="e#116#121#0" expanded="true" />
             <element signature="e#67#72#0" expanded="true" />
             <element signature="e#107#114#0" expanded="true" />
@@ -279,6 +303,16 @@
             <element signature="e#2#7#0" expanded="true" />
             <element signature="e#110#115#0" expanded="true" />
             <element signature="e#120#125#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/MovieCard.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,5 +1,6 @@
-import {FlatList, View, Text, SafeAreaView} from "react-native";
+import {FlatList, StyleSheet, View, Text, SafeAreaView} from "react-native";
 import React from 'react'
+import MovieCard, {Movie} from "./components/MovieCard";
 
 const movies: Movie[] = [
     {
@@ -143,31 +144,23 @@ const movies: Movie[] = [
         "download": "1"
     }]
 
-interface Movie {
-    id: string,
-    title: string,
-    image: string,
-    synopsis: string,
-    rating: string,
-    type: string,
-    released: string,
-    runtime: string,
-    largeimage: string,
-    unogsdate: string,
-    imdbid: string,
-    download: string
-}
-
-export default (): React.ReactElement => {
+const MoviesListScreen:  React.FC = () => {
     return (
-        <SafeAreaView style={{flex: 1}}>
-            <FlatList data={movies} renderItem={(item) => {
-                return (
-                    <View>
-                        <Text>${item.item.id}</Text>
-                    </View>
-                    )
+        <SafeAreaView style={styles.container}>
+            <FlatList style={styles.moviesList} data={movies} renderItem={(item) => {
+                return <MovieCard movie={item.item}/>
             }} />
         </SafeAreaView>
     )
-}
+};
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1
+    },
+    moviesList: {
+        flex: 1
+    }
+});
+
+export default MoviesListScreen;
