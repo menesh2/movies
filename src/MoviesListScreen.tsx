@@ -1,12 +1,13 @@
-import {FlatList, StyleSheet, View, Text, SafeAreaView} from "react-native";
+import {FlatList, StyleSheet, View, Text, SafeAreaView, TouchableOpacity} from "react-native";
 import React, {useEffect, useState} from 'react'
 import MovieCard, {Movie} from "./components/MovieCard";
 import {StackNavigationProp} from "@react-navigation/stack/lib/typescript/src/types";
-import {RootStackParamList} from "../App";
+import {AppState, RootStackParamList} from "../App";
 import { RouteProp } from '@react-navigation/native';
-import { useSelector } from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import { Searchbar } from 'react-native-paper';
-import searchMoviesForName from "./utils/searcher";
+import { searchMoviesForName } from "./utils/MoviesHelper";
+import { setSelectedMovieID } from "./redux/MoviesReducer"
 
 type MoviesListScreenNavigationProp = StackNavigationProp<
     RootStackParamList,
@@ -22,24 +23,30 @@ type Props = {
 
 const MoviesListScreen = ({ navigation }: Props) => {
 
-    let movies = useSelector((state : {movies: Movie[]}) => state.movies );
-    let [searchText, setSearchText] = useState('');
-    let [moviesToShow, setMoviesToShow] = useState(movies);
+    const movies = useSelector((state: AppState) => state.moviesReducer.movies );
+    const [searchText, setSearchText] = useState('');
+    const [moviesToShow, setMoviesToShow] = useState(movies);
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        let matchingMovies = searchMoviesForName(movies, searchText)
+        let matchingMovies = searchMoviesForName(movies, searchText);
         setMoviesToShow(matchingMovies)
 
     }, [searchText]);
+
+    const onMoviePress = (movie: Movie) => {
+        dispatch(setSelectedMovieID(movie.id));
+        navigation.navigate("MovieInfo")
+    };
 
     return (
         <SafeAreaView style={styles.container}>
             <Searchbar value={ searchText} placeholder="find a movie" onChangeText={(newSearchText) => setSearchText(newSearchText)}/>
             <FlatList style={styles.moviesList} data={moviesToShow} renderItem={(item) => {
                 return(
-                    <View style={styles.itemContainer}>
+                    <TouchableOpacity onPress={() => onMoviePress(item.item)} style={styles.itemContainer}>
                         <MovieCard movie={item.item}/>
-                    </View>
+                    </TouchableOpacity>
                 )
             }} />
         </SafeAreaView>

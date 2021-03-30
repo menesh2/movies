@@ -143,15 +143,28 @@ const movies: Movie[] = [
         "download": "1"
     }]
 
+export interface MoviesReducerState {
+    movies: Movie[]
+    selectedMovieID: string
+}
+
+const INITIAL_STATE: MoviesReducerState = {
+    movies: movies,
+    selectedMovieID: ''
+};
+
 export const moviesSlice = createSlice({
     name: 'moviesList',
-    initialState: movies,
+    initialState: INITIAL_STATE,
     reducers: {
         setMovies(state, action: PayloadAction<Movie[]>) {
-            state = action.payload
+            state.movies = action.payload
+        },
+        setSelectedMovieID(state, action: PayloadAction<string>) {
+            state.selectedMovieID = action.payload
         }
     }
 });
 
-export const { setMovies } = moviesSlice.actions;
+export const { setMovies, setSelectedMovieID } = moviesSlice.actions;
 export default moviesSlice.reducer
