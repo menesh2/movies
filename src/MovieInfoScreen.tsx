@@ -1,11 +1,12 @@
 
 import React, {FC} from "react";
 import {Movie} from "./components/MovieCard";
-import {Image, Text, SafeAreaView, StyleSheet, ScrollView, View} from "react-native";
+import {Image, Text, SafeAreaView, StyleSheet, ScrollView, View, useWindowDimensions} from "react-native";
 import commonStyles from "./utils/styles";
 import {useSelector} from "react-redux";
 import {AppState} from "../App";
 import {findMovieByID} from "./utils/MoviesHelper";
+import HTML from "react-native-render-html";
 
 const MovieInfoScreen: FC = () => {
     const { selectedMovieID, movies } = useSelector((state: AppState) => state.moviesReducer)
@@ -18,18 +19,23 @@ const MovieInfoScreen: FC = () => {
     function renderMainDetailsView(): React.ReactElement {
         return (
             <View style={styles.mainDetailsView}>
-                {renderText(`${selectedMovie?.rating}/10`)}
+                {selectedMovie?.rating !== '' && renderText(`${selectedMovie?.rating}/10`)}
                 {renderText(`${selectedMovie?.title}`)}
                 {renderText(`${selectedMovie?.runtime}`)}
             </View>
         )
     }
+
+    function renderMovieExplanation(text: string = ''): React.ReactElement {
+        return  <HTML allowFontScaling containerStyle={styles.movieExplanation} source={{ html: text }} />
+    }
+
     return (
         <SafeAreaView style={styles.container}>
             <ScrollView contentContainerStyle={styles.contentView} style={styles.container}>
                 <Image style={styles.image} source={{uri: selectedMovie?.largeimage }} />
                 {renderMainDetailsView()}
-                <Text>{selectedMovie?.synopsis}</Text>
+                {renderMovieExplanation(selectedMovie?.synopsis)}
             </ScrollView>
         </SafeAreaView>
     )
@@ -54,6 +60,11 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: 15
+    },
+    movieExplanation: {
+        flex: 1,
+        marginTop: 20,
+        marginHorizontal: 3
     }
 
 });
