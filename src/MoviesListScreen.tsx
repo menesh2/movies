@@ -148,7 +148,11 @@ const MoviesListScreen:  React.FC = () => {
     return (
         <SafeAreaView style={styles.container}>
             <FlatList style={styles.moviesList} data={movies} renderItem={(item) => {
-                return <MovieCard movie={item.item}/>
+                return(
+                    <View style={styles.itemContainer}>
+                        <MovieCard movie={item.item}/>
+                    </View>
+                )
             }} />
         </SafeAreaView>
     )
@@ -160,6 +164,11 @@ const styles = StyleSheet.create({
     },
     moviesList: {
         flex: 1
+    },
+    itemContainer: {
+        flex: 1,
+        marginBottom: 20,
+        marginHorizontal: 20,
     }
 });
 
