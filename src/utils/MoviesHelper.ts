@@ -6,7 +6,7 @@ export const searchMoviesForName = (movies: Movie[], searchText: string): Movie[
     }
 
     let matchingMovies = movies.filter((movie) => {
-        return movie.title.includes(searchText)
+        return movie.title.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())
     });
 
     return matchingMovies

@@ -152,7 +152,7 @@ describe('searchForName', () => {
    describe('empty string as search word', () => {
        test('returns the full movies array', () => {
            //arrange
-           const emptySearchText = ''
+           const emptySearchText = '';
            //act
            const result = searchMoviesForName(mockedMovies, emptySearchText);
 
