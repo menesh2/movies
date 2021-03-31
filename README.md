@@ -1,6 +1,6 @@
 # movies
 this app ltes you see the best movies in Kfar Saba
-you can check the movies list
+you can check the movies list, search for movies and see other movie details
 # installation
 1. first, you neet to run the server from this [link](https://github.com/next-insurance/next-test)
 2. if you want to run the app on simulator (virtual mobile device) please make sure to do the follow (if you want to use real device, skip this step):
