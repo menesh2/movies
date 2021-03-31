@@ -6,7 +6,7 @@
 3. clone this repo
 4. go to the project's root directory and run `npm install`
 5. run `npm install -g expo-cli`
-6. on the project open the file `API.ts`
+6. on the project open the file `Api.ts`
 7. replace the `localhost` from `http://localhost:3000/...` to your actual ip
 8. now you can run the project
     * make sure the device is connected to the same newtwork as your computer
