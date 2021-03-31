@@ -7,7 +7,7 @@
 4. go to the project's root directory and run `npm install`
 5. run `npm install -g expo-cli`
 6. on the project open the file `Api.ts`
-7. replace the `localhost` from `http://localhost:3000/...` to your actual ip
+7. replace the `localhost` from `baseUrl` to your actual ip so you should have somethink like this: `http://168.162.1.1:3000` (i picked an arbitrary ip for the example)
 8. now you can run the project
     * make sure the device is connected to the same newtwork as your computer
     * if you want to run on simulator
@@ -20,4 +20,4 @@
       - after the download completed, open it
       - select the option "Scan QR Code"
       - scan the code from the dashboard on your computer
-9. thats it! enjoy the app
+9. that's it! enjoy the app
