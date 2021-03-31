@@ -5,9 +5,9 @@ import {configureStore} from "@reduxjs/toolkit";
 import {Provider} from "react-redux";
 import { NavigationContainer } from '@react-navigation/native';
 import {createStackNavigator} from "@react-navigation/stack";
-import MoviesListScreen from "./src/MoviesListScreen";
 import moviesReducer, {MoviesReducerState} from "./src/redux/MoviesReducer"
 import MovieInfoScreen from "./src/MovieInfoScreen";
+import MoviesContainer from "./src/MoviesContainer";
 
 export interface AppState {
     moviesReducer: MoviesReducerState
@@ -20,7 +20,7 @@ const store = configureStore({
 });
 
 export type RootStackParamList = {
-    MoviesList: undefined;
+    MoviesContainer: undefined;
     MovieInfo: undefined;
 };
 
@@ -30,8 +30,8 @@ export default function App(): React.ReactElement {
   return (
       <Provider store={store}>
           <NavigationContainer>
-              <Stack.Navigator initialRouteName={"MoviesList"}>
-                  <Stack.Screen name="MoviesList" component={MoviesListScreen} options={{
+              <Stack.Navigator initialRouteName={"MoviesContainer"}>
+                  <Stack.Screen name="MoviesContainer" component={MoviesContainer} options={{
                       title: "Our Movies",
                       headerStyle: {
                           backgroundColor: '#fff',
