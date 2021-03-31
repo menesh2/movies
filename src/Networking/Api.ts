@@ -2,7 +2,11 @@ import {Movie} from "../components/MovieCard";
 import axios, {AxiosResponse, Method} from "axios";
 
 export const getMoviesFromRemote = (): Promise<Movie[]> => {
-    return sendRequest<Movie[]>('get', ' http://192.168.1.226:3000/movies')
+    return sendRequest<Movie[]>('get', 'http://192.168.1.226:3000/movies')
+};
+
+export const getMoviesByIDFromRemote = (id: string): Promise<Movie[]> => {
+    return sendRequest<Movie[]>('get', `http://192.168.1.226:3000/movies/${id}`)
 };
 
 function sendRequest<T>(method: Method, url: string): Promise<T> {
