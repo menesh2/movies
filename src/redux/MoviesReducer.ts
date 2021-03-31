@@ -172,7 +172,7 @@ export const moviesSlice = createSlice({
     },
     extraReducers: builder => {
         builder.addCase(getMoviesFromRemote.fulfilled, (state, action) => {
-            moviesSlice.caseReducers.setMovies(state, action)
+            state.movies = action.payload
         })
     }
 });

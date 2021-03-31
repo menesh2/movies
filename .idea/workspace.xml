@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7975082-59ff-4a2d-9728-1ec9b700b7cd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Networking/Api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieInfoScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieInfoScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MoviesListScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/MoviesListScreen.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/MoviesReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/MoviesReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/MoviesHelper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/MoviesHelper.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,7 +15,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MovieInfoScreen.tsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="354">
@@ -103,13 +96,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/redux/MoviesReducer.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2580">
-              <caret line="174" column="57" selection-start-line="174" selection-start-column="57" selection-end-line="174" selection-end-column="57" />
+            <state relative-caret-position="623">
+              <caret line="174" column="41" selection-start-line="174" selection-start-column="41" selection-end-line="174" selection-end-column="41" />
               <folding>
                 <element signature="e#0#78#0" expanded="true" />
+                <element signature="e#116#121#0" expanded="true" />
+                <element signature="e#67#72#0" expanded="true" />
+                <element signature="e#107#114#0" expanded="true" />
+                <element signature="e#109#114#0" expanded="true" />
+                <element signature="e#2#7#0" expanded="true" />
+                <element signature="e#110#115#0" expanded="true" />
+                <element signature="e#120#125#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -148,10 +148,10 @@
         <option value="$PROJECT_DIR$/src/utils/MovieInfoScreen.tsx" />
         <option value="$PROJECT_DIR$/App.tsx" />
         <option value="$PROJECT_DIR$/src/Networking/Api.ts" />
-        <option value="$PROJECT_DIR$/src/redux/MoviesReducer.ts" />
         <option value="$PROJECT_DIR$/src/utils/MoviesHelper.ts" />
         <option value="$PROJECT_DIR$/src/MoviesListScreen.tsx" />
         <option value="$PROJECT_DIR$/src/MovieInfoScreen.tsx" />
+        <option value="$PROJECT_DIR$/src/redux/MoviesReducer.ts" />
       </list>
     </option>
   </component>
@@ -246,12 +246,12 @@
       <workItem from="1617146478125" duration="1775000" />
       <workItem from="1617148290019" duration="1439000" />
       <workItem from="1617150109998" duration="1680000" />
-      <workItem from="1617151922982" duration="308000" />
+      <workItem from="1617151922982" duration="364000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30906000" />
+    <option name="totallyTimeSpent" value="30962000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="980" extended-state="0" />
@@ -455,16 +455,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/MoviesReducer.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2580">
-          <caret line="174" column="57" selection-start-line="174" selection-start-column="57" selection-end-line="174" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#78#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@reduxjs/toolkit/dist/typings.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21135">
@@ -495,6 +485,23 @@
           <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
           <folding>
             <element signature="e#1#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/MoviesReducer.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="623">
+          <caret line="174" column="41" selection-start-line="174" selection-start-column="41" selection-end-line="174" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#78#0" expanded="true" />
+            <element signature="e#116#121#0" expanded="true" />
+            <element signature="e#67#72#0" expanded="true" />
+            <element signature="e#107#114#0" expanded="true" />
+            <element signature="e#109#114#0" expanded="true" />
+            <element signature="e#2#7#0" expanded="true" />
+            <element signature="e#110#115#0" expanded="true" />
+            <element signature="e#120#125#0" expanded="true" />
           </folding>
         </state>
       </provider>
