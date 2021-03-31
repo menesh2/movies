@@ -16,8 +16,8 @@
     * if you want to run on real device
       - on the root level of the project run `npm start`
       - it will open some kind of dashboard with QR code on one of the bottom corners (depends on rtl or ltr)
-      - download on your mobile device the app `Expo Go`
-      - open `Expo Go` on your mobile device
+      - on your mobile device download the app `Expo Go` from the store
+      - after the download completed, open it
       - select the option "Scan QR Code"
       - scan the code from the dashboard on your computer
 9. thats it! enjoy the app
