@@ -1,6 +1,6 @@
 import {FlatList, StyleSheet, View, Text, SafeAreaView, TouchableOpacity} from "react-native";
 import React, {useEffect, useState} from 'react'
-import MovieCard, {Movie} from "./components/MovieCard";
+import MovieCard, {Movie} from "./MovieCard";
 
 interface MoviesListViewProps {
     movies: Movie[]

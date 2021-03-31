@@ -8,7 +8,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import { Searchbar } from 'react-native-paper';
 import { searchMoviesForName } from "./utils/MoviesHelper";
 import {getMoviesFromRemote, setSelectedMovieID} from "./redux/MoviesReducer"
-import MoviesListView from "./MoviesListScreen";
+import MoviesListView from "./components/MoviesListView";
 
 type MoviesContainerNavigationProp = StackNavigationProp<
     RootStackParamList,
