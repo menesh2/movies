@@ -5,8 +5,16 @@ export const getMoviesFromRemote = (): Promise<Movie[]> => {
     return sendRequest<Movie[]>('get', 'http://192.168.1.226:3000/movies')
 };
 
-export const getMoviesByIDFromRemote = (id: string): Promise<Movie[]> => {
-    return sendRequest<Movie[]>('get', `http://192.168.1.226:3000/movies/${id}`)
+export const getMovieByIDFromRemote = (id: string): Promise<Movie> => {
+    return new Promise<Movie>(((resolve, reject) => {
+        sendRequest<Movie[]>('get', `http://192.168.1.226:3000/movies/${id}`).then((movieArr) => {
+            if(movieArr[0]) {
+                resolve(movieArr[0])
+            } else {
+                reject()
+            }
+        })
+    }))
 };
 
 function sendRequest<T>(method: Method, url: string): Promise<T> {

@@ -159,11 +159,6 @@ export const getMoviesFromRemote = createAsyncThunk('moviesList/getMoviesFromRem
     return movies
 });
 
-export const getMovieByIDFromRemote = createAsyncThunk('moviesList/getMovieByIDFromRemote', async (id: string, ) => {
-    const movies = await API.getMoviesByIDFromRemote(id);
-    return movies
-});
-
 export const moviesSlice = createSlice({
     name: 'moviesList',
     initialState: INITIAL_STATE,

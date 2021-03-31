@@ -1,16 +1,28 @@
 
-import React, {FC} from "react";
-import {Movie} from "./components/MovieCard";
+import React, {FC, useEffect, useState} from "react";
 import {Image, Text, SafeAreaView, StyleSheet, ScrollView, View, useWindowDimensions} from "react-native";
-import commonStyles from "./utils/styles";
 import {useSelector} from "react-redux";
 import {AppState} from "../App";
 import {findMovieByID} from "./utils/MoviesHelper";
 import HTML from "react-native-render-html";
+import * as API from './Networking/Api'
+import {Movie} from "./components/MovieCard";
 
 const MovieInfoScreen: FC = () => {
-    const { selectedMovieID, movies } = useSelector((state: AppState) => state.moviesReducer)
-    const selectedMovie = findMovieByID(movies, selectedMovieID);
+    const { selectedMovieID, movies } = useSelector((state: AppState) => state.moviesReducer);
+    const [selectedMovie, setSelectedMovie] = useState<Movie | undefined>(undefined);
+
+    useEffect(() => {
+        console.log("getting movie")
+        API.getMovieByIDFromRemote(selectedMovieID).then((movie) => {
+            console.log("movie arrived")
+            console.log(movie)
+            setSelectedMovie(movie)
+        }).catch(() => {
+            const movie = findMovieByID(movies, selectedMovieID)
+            setSelectedMovie(movie)
+        })
+    }, [selectedMovieID]);
 
     function renderText(text: string): React.ReactElement {
         return <Text style={styles.text}>{text}</Text>
