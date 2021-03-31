@@ -39,15 +39,32 @@ const MovieInfoScreen: FC = () => {
         return  <HTML containerStyle={styles.movieExplanation} source={{ html: text }} />
     }
 
-    return (
-        <SafeAreaView style={styles.container}>
-            <ScrollView contentContainerStyle={styles.contentView} style={styles.container}>
-                <Image style={styles.image} source={{uri: selectedMovie?.largeimage }} />
-                {renderMainDetailsView()}
-                {renderMovieExplanation(selectedMovie?.synopsis)}
-            </ScrollView>
-        </SafeAreaView>
-    )
+    function renderMovieInfo(): React.ReactElement {
+        return (
+            <SafeAreaView style={styles.container}>
+                <ScrollView contentContainerStyle={styles.contentView} style={styles.container}>
+                    <Image style={styles.image} source={{uri: selectedMovie?.largeimage }} />
+                    {renderMainDetailsView()}
+                    {renderMovieExplanation(selectedMovie?.synopsis)}
+                </ScrollView>
+            </SafeAreaView>
+
+        )
+    }
+
+    function renderNoMovieScreen(): React.ReactElement {
+        return (
+            <SafeAreaView style={styles.container}>
+                <Text>no movie found</Text>
+            </SafeAreaView>
+        )
+    }
+
+    if(selectedMovie) {
+        return renderMovieInfo()
+    } else {
+        return renderNoMovieScreen()
+    }
 };
 
 const styles = StyleSheet.create({
