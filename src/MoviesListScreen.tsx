@@ -34,15 +34,11 @@ const MoviesListScreen = ({ navigation }: Props) => {
 
     useEffect(() => {
         let matchingMovies = searchMoviesForName(movies, searchText);
-        console.log("matching movies");
-        console.log(matchingMovies);
         setMoviesToShow(matchingMovies)
 
     }, [searchText]);
 
     useEffect(() => {
-        console.log("movies changed");
-        console.log(movies);
         setSearchText('')
         setMoviesToShow(movies)
     }, [movies]);

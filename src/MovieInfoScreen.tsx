@@ -13,10 +13,7 @@ const MovieInfoScreen: FC = () => {
     const [selectedMovie, setSelectedMovie] = useState<Movie | undefined>(undefined);
 
     useEffect(() => {
-        console.log("getting movie")
         API.getMovieByIDFromRemote(selectedMovieID).then((movie) => {
-            console.log("movie arrived")
-            console.log(movie)
             setSelectedMovie(movie)
         }).catch(() => {
             const movie = findMovieByID(movies, selectedMovieID)
