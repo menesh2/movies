@@ -27,7 +27,7 @@ const MovieInfoScreen: FC = () => {
     }
 
     function renderMovieExplanation(text: string = ''): React.ReactElement {
-        return  <HTML allowFontScaling containerStyle={styles.movieExplanation} source={{ html: text }} />
+        return  <HTML containerStyle={styles.movieExplanation} source={{ html: text }} />
     }
 
     return (

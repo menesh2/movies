@@ -1,5 +1,6 @@
-import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {Movie} from "../components/MovieCard";
+import * as API from "../Networking/Api"
 
 const movies: Movie[] = [
     {
@@ -149,9 +150,14 @@ export interface MoviesReducerState {
 }
 
 const INITIAL_STATE: MoviesReducerState = {
-    movies: movies,
+    movies: [],
     selectedMovieID: ''
 };
+
+export const getMoviesFromRemote = createAsyncThunk('moviesList/getMoviesFromRemote', async () => {
+    const movies = await API.getMoviesFromRemote();
+    return movies
+});
 
 export const moviesSlice = createSlice({
     name: 'moviesList',
@@ -163,6 +169,11 @@ export const moviesSlice = createSlice({
         setSelectedMovieID(state, action: PayloadAction<string>) {
             state.selectedMovieID = action.payload
         }
+    },
+    extraReducers: builder => {
+        builder.addCase(getMoviesFromRemote.fulfilled, (state, action) => {
+            moviesSlice.caseReducers.setMovies(state, action)
+        })
     }
 });
 

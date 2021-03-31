@@ -16,7 +16,6 @@ export const findMovieByID = (movies: Movie[], movieID: string): Movie | undefin
     let movie = movies.find((movie) => {
         return movie.id === movieID
     });
-    console.log(movie)
 
     return movie
 }

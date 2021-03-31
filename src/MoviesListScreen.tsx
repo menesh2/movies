@@ -7,7 +7,7 @@ import { RouteProp } from '@react-navigation/native';
 import {useDispatch, useSelector} from 'react-redux';
 import { Searchbar } from 'react-native-paper';
 import { searchMoviesForName } from "./utils/MoviesHelper";
-import { setSelectedMovieID } from "./redux/MoviesReducer"
+import {getMoviesFromRemote, setSelectedMovieID} from "./redux/MoviesReducer"
 
 type MoviesListScreenNavigationProp = StackNavigationProp<
     RootStackParamList,
@@ -29,10 +29,23 @@ const MoviesListScreen = ({ navigation }: Props) => {
     const dispatch = useDispatch();
 
     useEffect(() => {
+        dispatch(getMoviesFromRemote())
+    }, []);
+
+    useEffect(() => {
         let matchingMovies = searchMoviesForName(movies, searchText);
+        console.log("matching movies");
+        console.log(matchingMovies);
         setMoviesToShow(matchingMovies)
 
     }, [searchText]);
+
+    useEffect(() => {
+        console.log("movies changed");
+        console.log(movies);
+        setSearchText('')
+        setMoviesToShow(movies)
+    }, [movies]);
 
     const onMoviePress = (movie: Movie) => {
         dispatch(setSelectedMovieID(movie.id));
