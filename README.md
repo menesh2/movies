@@ -1,6 +1,6 @@
 # movies
 1. first, you neet to run the server from this [link](https://github.com/next-insurance/next-test)
-2. if you want to run the app on simulator please make sure to do the follow (if you want to use real device, skip this step):
+2. if you want to run the app on simulator (virtual mobile device) please make sure to do the follow (if you want to use real device, skip this step):
     * for ios simulator (only for mac users) - download xCode from the store
     * for android simulator (both windows and mac users) - download android studio, and create simulator using this [guide](https://developer.android.com/studio/run/managing-avds#createavd)
 3. clone this repo
